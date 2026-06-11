@@ -6,6 +6,7 @@ type PageType = 'ambassador' | 'cert' | 'ai'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
+    baseURL: process.env.BASE_URL || '/',
     head: {
       link: [
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: 'favicon/favicon-16x16.png' },
@@ -51,11 +52,11 @@ export default defineNuxtConfig({
   // buildDir: 'docs',
   compatibilityDate: '2024-04-03',
   nitro: {
+    baseURL: process.env.BASE_URL || '/',
     prerender: {
       crawlLinks: true,
       routes: [
         '/',
-        process.env.BASE_URL || '/',
       ],
     },
   },
