@@ -1,0 +1,262 @@
+button.primary, button.secondary, button.tertiary,
+a.primary, a.secondary, a.tertiary, button.ticket, a.ticket {
+    @apply text-lg text-nowrap font-serif font-normal no-underline tracking-widest;
+    @apply py-2 px-4 rounded-none;
+    @apply my-4 rounded-none;
+}
+
+button.primary, a.primary {
+    @apply
+        bg-robot-600 dark:bg-robot-500
+        ring-2 ring-robot-700 dark:ring-robot-600
+        text-robot-100 dark:text-robot-900/90
+        font-mono font-medium
+        pt-2 border-none
+        transition-colors;
+
+    &:hover, &:focus {
+        @apply
+            bg-robot-500 dark:bg-robot-400
+            text-robot-50 dark:text-robot-900
+    }
+}
+
+:root {
+    --g1: #2ecbc2;
+    --g2: #2e7fcb;
+    --g3: #2ecbc2;
+    --g4: #b12ecb;
+}
+
+html {
+    scroll-padding-top: calc(44px + 1rem);
+}
+
+details {
+    @apply
+        bg-gray-100 open:bg-gray-50 dark:bg-[#2b2b2b] dark:open:bg-[#2b3030]
+        shadow-md hover:shadow-lg transition-shadow duration-200
+        border-gray-300 dark:border-gray-700 border border-l-4 border-l-robot-700 dark:border-l-robot-700 open:border-l-robot-500
+        my-4;
+}
+
+:root[data-theme="robocon"] {
+    --g1: #bbc446;
+    --g2: #00c0b5;
+    --g3: #ff00e1;
+    --g4: #1f1b9f;
+
+    details {
+        background:
+            linear-gradient(
+                100deg,
+                rgb(from var(--g1) r g b / 0.1),
+                rgb(from var(--g2) r g b / 0.1),
+                rgb(from var(--g3) r g b / 0.1),
+                rgb(from var(--g4) r g b / 0.1)
+            ) padding-box,
+            linear-gradient(
+            -10deg,
+                rgb(from var(--g1) r g b / 0.1),
+                rgb(from var(--g2) r g b / 0.1),
+                rgb(from var(--g3) r g b / 0.1),
+                rgb(from var(--g4) r g b / 0.1)
+            ) border-box;
+        @apply bg-[#1b1b1b] open:bg-[#2b3030] border-gray-700 border-l-robot-700;
+    }
+
+    .card.default {
+        @apply border-robot-400 bg-robot-900 border-solid border rounded-none;
+    }
+
+    .card.stroke {
+        padding: 2rem;
+    }
+
+    a.ticket {
+        @apply text-white md:text-xl sm:text-lg px-6 py-4 shadow-lg;
+        margin-inline: 0;
+        display: inline-block;
+        border-radius: 0.25rem;
+        position: relative;
+        z-index: 0;
+        border: 4px solid transparent;
+        transition: background-position .25s ease, font-weight .2s ease, transform .05s ease;
+        background:
+            linear-gradient(
+                100deg,
+                rgb(from var(--g1) r g b / 0.3),
+                rgb(from var(--g2) r g b / 0.3),
+                rgb(from var(--g3) r g b / 0.3),
+                rgb(from var(--g4) r g b / 0.3)
+            ) padding-box,
+            linear-gradient(
+            -10deg,
+                rgb(from var(--g1) r g b / 0.4),
+                rgb(from var(--g2) r g b / 0.4),
+                rgb(from var(--g3) r g b / 0.4),
+                rgb(from var(--g4) r g b / 0.4)
+            ) border-box;
+    }
+
+    a.ticket:hover,
+    a.ticket:focus {
+        outline: none;
+        background:
+            linear-gradient(
+                100deg,
+                rgb(from var(--g1) r g b / 0.6),
+                rgb(from var(--g2) r g b / 0.6),
+                rgb(from var(--g3) r g b / 0.6),
+                rgb(from var(--g4) r g b / 0.6)
+            ) padding-box,
+            linear-gradient(
+            -10deg,
+                rgb(from var(--g1) r g b / 0.6),
+                rgb(from var(--g2) r g b / 0.6),
+                rgb(from var(--g3) r g b / 0.6),
+                rgb(from var(--g4) r g b / 0.6)
+            ) border-box;
+    }
+}
+
+button.secondary, a.secondary {
+    @apply
+    bg-gray-200 text-robot-800
+    dark:bg-robot-800/50 dark:text-robot-100 dark:border-robot-700;
+}
+
+button.tertiary, a.tertiary {
+    @apply border border-robot-200;
+
+    &:hover, &:focus {
+        @apply bg-gray-500/50;
+    }
+}
+
+button.white, a.white {
+    @apply bg-white text-black font-medium;
+
+    &:hover {
+        @apply bg-gray-200 text-black;
+    }
+}
+
+button.ticket, a.ticket {
+    @apply text-xl font-ocr border-solid border-robot-300 border-4;
+}
+
+button.small, a.small {
+    @apply text-lg py-1 px-2;
+}
+
+button.badge {
+    @apply text-xs p-1 font-semibold font-ocr dark:bg-robot-800;
+}
+
+select {
+    @apply py-3;
+    appearance: none;
+    line-height: 1.35;
+    background-position: calc(100% - 1rem);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIzIDMgMTggMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjFyZW0iIGhlaWdodD0iMXJlbSIgZmlsbD0iIzAwMCIgc3R5bGU9InRyYW5zZm9ybTogcm90YXRlKC05MGRlZykiPjxwYXRoIGQ9Ik0xNS40MSA3LjQxTDE0IDZsLTYgNiA2IDYgMS40MS0xLjQxTDEwLjgzIDEybDQuNTgtNC41OXoiPjwvcGF0aD48L3N2Zz4=);
+    background-repeat: no-repeat;
+    @media (prefers-color-scheme: dark) {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIzIDMgMTggMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjFyZW0iIGhlaWdodD0iMXJlbSIgZmlsbD0iI2ZmZiIgc3R5bGU9InRyYW5zZm9ybTogcm90YXRlKC05MGRlZykiPjxwYXRoIGQ9Ik0xNS40MSA3LjQxTDE0IDZsLTYgNiA2IDYgMS40MS0xLjQxTDEwLjgzIDEybDQuNTgtNC41OXoiPjwvcGF0aD48L3N2Zz4=);
+    }
+    &.primary {
+        @apply bg-gray-200 dark:bg-robot-800 rounded-md;
+    }
+}
+
+input.primary {
+    @apply bg-gray-100 dark:bg-gray-200 dark:text-robot-900 border-robot-700 border-2;
+}
+
+input.primary, select.primary {
+    @apply px-4 py-3;
+
+    &::placeholder {
+        @apply text-robot-700 dark:text-robot-800;
+    }
+}
+
+.checkbox.primary {
+    @apply relative w-5 h-5 bg-gray-200 dark:bg-black border border-transparent rounded flex items-center justify-center;
+
+    svg {
+        @apply hidden h-4 w-4;
+    }
+
+    &:hover {
+        @apply border-robot-700;
+    }
+    &:focus {
+        @apply border-robot-500;
+    }
+}
+
+.item-row.wrapping {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}
+.item-row.scroll {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    .cardContainer {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        scroll-margin: 0.5rem;
+    }
+    @media screen and (max-width: 768px) {
+        .cardContainer {
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+            scroll-margin: 0.5rem;
+        }
+        .cardContainer:first-of-type {
+            scroll-snap-align: start;
+        }
+        .cardContainer:last-of-type {
+            scroll-snap-align: end;
+        }
+    }
+}
+
+
+table {
+    @apply w-full font-serif mt-4;
+    border-collapse: collapse;
+
+    th, td {
+        @apply px-2 py-4;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    th {
+        @apply text-robot-400 border-b border-robot-300/30;
+    }
+    td {
+      border-bottom: 1px solid #333;
+    }
+    tr:hover {
+      @apply bg-robot-900;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+  table {
+    font-size: 0.875rem;
+  }
+
+  th,
+  td {
+    padding: 0.25rem 0.5rem;
+  }
+}
+
