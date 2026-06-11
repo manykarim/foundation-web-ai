@@ -52,7 +52,6 @@ export default defineNuxtConfig({
   // buildDir: 'docs',
   compatibilityDate: '2024-04-03',
   nitro: {
-    baseURL: process.env.BASE_URL || '/',
     prerender: {
       crawlLinks: true,
       routes: [

@@ -34,26 +34,11 @@ jobs:
           BASE_URL: /foundation-web-ai/
         run: npx nuxt generate
 
-      - name: Restructure for GH Pages project site
-        run: |
-          # Nuxt was built with BASE_URL=/foundation-web-ai/ so the HTML's asset
-          # references are prefixed with /foundation-web-ai/. To make those
-          # references resolve correctly when the page is served at
-          # https://<owner>.github.io/foundation-web-ai/, the static files
-          # (index.html, _nuxt/, fonts/, favicon/, img/, svg/, etc.) must live
-          # at the /foundation-web-ai/ sub-path of the published branch.
-          mkdir -p _publish/foundation-web-ai
-          # Move all generated assets under foundation-web-ai/
-          shopt -s dotglob
-          mv .output/public/* _publish/foundation-web-ai/ 2>/dev/null || true
-          # Remove the empty .output dir so the artifact is clean
-          rm -rf .output
-
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _publish
+          path: .output/public
 
   deploy:
     environment:
